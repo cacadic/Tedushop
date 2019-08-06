@@ -5,6 +5,7 @@ E:\Holacom\Learning\Tedu\Fix\TeduShop\TeduShop.Common\obj\Debug\TeduShop.Common.
 E:\Holacom\Learning\Tedu\Fix\TeduShop\TeduShop.Common\obj\Debug\TeduShop.Common.pdb
 E:\Holacom\Learning\Tedu\Git\TeduShop.Common\bin\Debug\TeduShop.Common.dll
 E:\Holacom\Learning\Tedu\Git\TeduShop.Common\bin\Debug\TeduShop.Common.pdb
+E:\Holacom\Learning\Tedu\Git\TeduShop.Common\obj\Debug\TeduShop.Common.csprojAssemblyReference.cache
 E:\Holacom\Learning\Tedu\Git\TeduShop.Common\obj\Debug\TeduShop.Common.csproj.CoreCompileInputs.cache
 E:\Holacom\Learning\Tedu\Git\TeduShop.Common\obj\Debug\TeduShop.Common.dll
 E:\Holacom\Learning\Tedu\Git\TeduShop.Common\obj\Debug\TeduShop.Common.pdb
