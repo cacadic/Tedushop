@@ -11,6 +11,7 @@ namespace TeduShop.Data.Repositories
     {
         public PostRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+            //Very Good
         }
     }
 }
