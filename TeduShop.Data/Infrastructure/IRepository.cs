@@ -24,7 +24,7 @@ namespace TeduShop.Data.Infrastructure
         void DeleteMulti(Expression<Func<T, bool>> where);
 
         //Get Single Entity By ID
-        T Get(int id);
+        T GetSingleById(int id);
 
         //Get Single Entity By Condition
         T GetEntityByCondition(Expression<Func<T, bool>> expression, string[] includes = null);

@@ -58,7 +58,7 @@ namespace TeduShop.Data.Infrastructure
 
         public virtual void Delete(int id)
         {
-            T entity = Get(id);
+            T entity = GetSingleById(id);
             dbSet.Remove(entity);
         }
 
@@ -69,7 +69,7 @@ namespace TeduShop.Data.Infrastructure
                 dbSet.Remove(obj);
         }
 
-        public virtual T Get(int id)
+        public virtual T GetSingleById(int id)
         {
             return dbSet.Find(id);
         }

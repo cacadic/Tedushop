@@ -3,13 +3,13 @@ using TeduShop.Model.Model;
 
 namespace TeduShop.Data.Repositories
 {
-    public interface IPostCategoryRepositoryRepository
+    public interface IPostCategoryRepository : IRepository<PostCategory>
     {
     }
 
-    public class PostCategoryRepositoryRepository : RepositoryBase<PostCategory>, IPostCategoryRepositoryRepository
+    public class PostCategoryRepository : RepositoryBase<PostCategory>, IPostCategoryRepository
     {
-        public PostCategoryRepositoryRepository(IDbFactory dbFactory) : base(dbFactory)
+        public PostCategoryRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
     }
