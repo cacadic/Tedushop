@@ -31,3 +31,4 @@ E:\Holacom\Learning\Tedu\Git\TeduShop.Data\obj\Debug\TeduShop.Data.csproj.CoreCo
 E:\Holacom\Learning\Tedu\Git\TeduShop.Data\obj\Debug\TeduShop.Data.csproj.CopyComplete
 E:\Holacom\Learning\Tedu\Git\TeduShop.Data\obj\Debug\TeduShop.Data.dll
 E:\Holacom\Learning\Tedu\Git\TeduShop.Data\obj\Debug\TeduShop.Data.pdb
+E:\Holacom\Learning\Tedu\Git\TeduShop.Data\obj\Debug\TeduShop.Data.Migrations.AddErrorTable.resources
