@@ -3,27 +3,35 @@ using TeduShop.Data.Infrastructure;
 using TeduShop.Data.Repositories;
 using TeduShop.Model.Model;
 
-namespace TeduShop.Service
+namespace TeduShop.Services
 {
     public interface IPostCategoryService
     {
-        void Add(PostCategory postCategory);
+        PostCategory Add(PostCategory entity);
 
-        void Update(PostCategory postCategory);
+        void Update(PostCategory entity);
 
-        void Delete(int id);
+        PostCategory Delete(int id);
 
         IEnumerable<PostCategory> GetAll();
 
-        IEnumerable<PostCategory> GetAllByParentId(int parentId);
+        IEnumerable<PostCategory> GetAllByParentIdPaging(int parentId, int pageIndex, int pageSize, out int totalRow);
 
         PostCategory GetById(int id);
+
+        void SaveChanges();
     }
 
     public class PostCategoryService : IPostCategoryService
     {
+        #region Variables
+
         private IPostCategoryRepository _postCategoryRepository;
         private IUnitOfWork _unitOfWork;
+
+        #endregion Variables
+
+        #region Contrustor
 
         public PostCategoryService(IPostCategoryRepository postCategoryRepository, IUnitOfWork unitOfWork)
         {
@@ -31,14 +39,18 @@ namespace TeduShop.Service
             this._unitOfWork = unitOfWork;
         }
 
-        public void Add(PostCategory postCategory)
+        #endregion Contrustor
+
+        #region Implements
+
+        public PostCategory Add(PostCategory entity)
         {
-            _postCategoryRepository.Add(postCategory);
+            return _postCategoryRepository.Add(entity);
         }
 
-        public void Delete(int id)
+        public PostCategory Delete(int id)
         {
-            _postCategoryRepository.Delete(id);
+            return _postCategoryRepository.Delete(id);
         }
 
         public IEnumerable<PostCategory> GetAll()
@@ -46,19 +58,26 @@ namespace TeduShop.Service
             return _postCategoryRepository.GetAll();
         }
 
-        public IEnumerable<PostCategory> GetAllByParentId(int parentId)
-        {
-            return _postCategoryRepository.GetMulti(x => x.Status && x.ParentID == parentId);
-        }
-
         public PostCategory GetById(int id)
         {
             return _postCategoryRepository.GetSingleById(id);
         }
 
-        public void Update(PostCategory postCategory)
+        public void Update(PostCategory entity)
         {
-            _postCategoryRepository.Update(postCategory);
+            _postCategoryRepository.Update(entity);
         }
+
+        public void SaveChanges()
+        {
+            _unitOfWork.Commit();
+        }
+
+        public IEnumerable<PostCategory> GetAllByParentIdPaging(int parentId, int pageIndex, int pageSize, out int totalRow)
+        {
+            return _postCategoryRepository.GetMultiPaging(x => x.Status && x.ParentID == parentId, out totalRow, pageIndex, pageSize);
+        }
+
+        #endregion Implements
     }
 }
